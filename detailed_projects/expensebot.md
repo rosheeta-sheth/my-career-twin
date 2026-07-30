@@ -11,4 +11,4 @@ Built a full-stack expense-tracking app with a Flask/SQLAlchemy backend and a Re
 - **Smart Categorization**: Generated confidence-scored expense categories automatically using Claude.
 - **Full-Stack Architecture**: Developed a robust REST API with Flask and a dynamic, responsive user interface with React.
 
-[View on GitHub](PENDING_LINK)
+[View on GitHub](https://github.com/rosheeta-sheth/expense-bot)
