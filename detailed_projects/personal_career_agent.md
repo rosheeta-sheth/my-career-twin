@@ -1,5 +1,7 @@
 # Personal Career Agent
 
+<p style="color: #27ae60; font-weight: bold; margin-top: -10px;">✨ You are interacting with this project right now!</p>
+
 **Tech Stack**: Agentic AI, Python, OpenAI API, Gradio
 **Date**: May 2026 – July 2026
 
