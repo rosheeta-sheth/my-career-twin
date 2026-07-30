@@ -11,4 +11,4 @@ Built an agentic “digital twin” career chatbot grounded in personal career d
 ## Key Features
 - **RAG & Knowledge Base**: Uses a local semantic search engine with `text-embedding-3-small` and cosine similarity to fetch precise context from resume PDFs and project write-ups.
 - **Function Calling**: Implemented tools that allow the AI to log unanswered questions and securely capture interested visitors’ contact details.
-- **Interactive UI**: Deployed as an interactive Gradio web application with real-time streaming, voice I/O, and custom themes.
+- **Interactive UI**: Deployed as an interactive Gradio web application with real-time streaming and a clean, responsive design.

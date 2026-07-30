@@ -16,7 +16,7 @@ PROJECTS = [
     {
         "name": "Personal Career Agent",
         "file": "personal_career_agent.html",
-        "summary": "Agentic AI 'digital twin' chatbot grounded in personal career documents with voice and streaming.",
+        "summary": "Agentic AI 'digital twin' chatbot grounded in personal career documents with real-time streaming.",
         "tags": ["Agentic AI", "Python", "OpenAI API", "Gradio"],
     },
     {
