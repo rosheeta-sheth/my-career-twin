@@ -9,9 +9,10 @@ def crop_to_circle(input_path, output_path):
     min_dim = min(width, height)
     
     left = (width - min_dim) / 2
-    top = (height - min_dim) / 2
-    right = (width + min_dim) / 2
-    bottom = (height + min_dim) / 2
+    # Shift the crop upwards to get more of the upper face
+    top = (height - min_dim) * 0.15
+    right = left + min_dim
+    bottom = top + min_dim
     
     img = img.crop((left, top, right, bottom))
     
