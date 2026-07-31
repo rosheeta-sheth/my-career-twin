@@ -1,7 +1,6 @@
 # Multi-Agent Engineering Team
 
 **Tech Stack**: CrewAI, Python
-**Date**: May 2026 – July 2026
 
 ## Overview
 Built a collaborative software “engineering team” of role-based agents using CrewAI that turn a single requirement into working, tested Python code.

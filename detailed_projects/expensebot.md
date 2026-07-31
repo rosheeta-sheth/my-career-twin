@@ -1,7 +1,6 @@
 # ExpenseBot (AI Receipt & Expense Tracker)
 
 **Tech Stack**: React, Flask, SQLAlchemy, Claude API
-**Date**: May 2026 – July 2026
 
 ## Overview
 Built a full-stack expense-tracking app with a Flask/SQLAlchemy backend and a React frontend, secured with JWT authentication.

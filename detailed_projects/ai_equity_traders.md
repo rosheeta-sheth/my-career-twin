@@ -1,7 +1,6 @@
 # AI Equity Traders (Multi-Agent System)
 
 **Tech Stack**: OpenAI Agents SDK, MCP, Python, Gradio
-**Date**: May 2026 – July 2026
 
 ## Overview
 Architected an autonomous multi-agent equity-trading simulation in which trader agents with distinct strategies research markets and execute simulated trades.
