@@ -1,6 +1,6 @@
 # DishRadar
 
-**Links**: [GitHub Repository](https://github.com/rosheeta-sheth/dishradar)
+**Links**: [GitHub Repository](https://github.com/rosheeta-sheth/dishradar) | [Live Demo](https://dishradar-teal.vercel.app/)
 
 ## Overview
 DishRadar is a personal project located on my GitHub. It involves analytics and data aggregation related to food or restaurant tracking. (Note: Specific details for this project can be explored further by visiting the repository).
