@@ -1,5 +1,8 @@
 """Visual styling for Rosheeta's career chatbot."""
 
+import base64
+from pathlib import Path
+
 from content import CONTACT_EMAIL, LINKEDIN_URL
 
 EXAMPLES = [
@@ -9,11 +12,19 @@ EXAMPLES = [
     "How can I get in touch with you?",
 ]
 
+# Embed profile image as base64 so it renders in gr.HTML()
+_profile_path = Path(__file__).parent / "profile.png"
+if _profile_path.exists():
+    _profile_b64 = base64.b64encode(_profile_path.read_bytes()).decode()
+    _profile_src = f"data:image/png;base64,{_profile_b64}"
+else:
+    _profile_src = ""
+
 HEADER_HTML = f"""
 <header class="site-header" id="site-header">
   <div class="header-main">
     <div class="brand">
-      <img class="avatar" src="/file=profile.png" alt="Rosheeta Sheth">
+      <img class="avatar" src="{_profile_src}" alt="Rosheeta Sheth">
       <div class="brand-text">
         <h1>Rosheeta Sheth</h1>
         <p class="brand-subtitle">Industrial Engineering · Georgia Tech · FinTech minor</p>
@@ -124,7 +135,6 @@ footer,
   flex: 0 0 44px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
   transition: width 220ms ease, height 220ms ease, flex-basis 220ms ease;
 }
 
@@ -392,7 +402,7 @@ button[variant="primary"]:hover {
   border-radius: 50% !important;
   object-fit: cover !important;
   flex-shrink: 0 !important;
-  border: 2px solid var(--accent) !important;
+  border: none !important;
   background: var(--surface) !important;
 }
 
