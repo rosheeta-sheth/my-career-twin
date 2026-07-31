@@ -393,17 +393,27 @@ button[variant="primary"]:hover {
   box-shadow: none !important;
 }
 
-/* Avatar images in chat */
-#twin-chat .message-row img.avatar-image,
+/* Avatar images in chat — override all Gradio defaults */
+#twin-chat .avatar-image,
+#twin-chat img.avatar-image,
+#twin-chat .avatar-container,
+#twin-chat .avatar-container img,
+#twin-chat .message-row .avatar-image,
+#twin-chat .message-row .avatar-container,
 #twin-chat .message-row .avatar-container img,
-#twin-chat .message-row .avatar-image {
+#twin-chat .message-row img.avatar-image,
+#twin-chat .message-row img[class*="avatar"] {
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   flex-shrink: 0 !important;
   border: none !important;
-  background: var(--surface) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 #twin-chat .message-row {
