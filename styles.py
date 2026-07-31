@@ -13,7 +13,7 @@ HEADER_HTML = f"""
 <header class="site-header" id="site-header">
   <div class="header-main">
     <div class="brand">
-      <div class="avatar" aria-hidden="true">RS</div>
+      <img class="avatar" src="/file=profile.png" alt="Rosheeta Sheth">
       <div class="brand-text">
         <h1>Rosheeta Sheth</h1>
         <p class="brand-subtitle">Industrial Engineering · Georgia Tech · FinTech minor</p>
@@ -126,17 +126,12 @@ footer,
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
   transition: width 220ms ease, height 220ms ease, flex-basis 220ms ease;
 }
 
@@ -201,8 +196,7 @@ body.chat-active .avatar {
   width: 32px;
   height: 32px;
   flex-basis: 32px;
-  font-size: 11px;
-  border-radius: 8px;
+  border-radius: 50%;
 }
 
 body.chat-active .brand-text h1 {
@@ -391,14 +385,23 @@ button[variant="primary"]:hover {
 }
 
 #twin-chat .message-row,
-#twin-chat .message-row > *,
-#twin-chat .message-row .role,
 #twin-chat .message-row .message-wrap,
-#twin-chat .message-row .bubble-wrap,
-#twin-chat .message-row :is(.message, .message-bubble, .bubble) {
+#twin-chat .message-row .bubble-wrap {
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
+}
+
+/* Avatar images in chat */
+#twin-chat .message-row img.avatar-image,
+#twin-chat .message-row .avatar-container img,
+#twin-chat .message-row .avatar-image {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  border: 2px solid var(--accent) !important;
 }
 
 #twin-chat .message-row {
@@ -429,8 +432,9 @@ button[variant="primary"]:hover {
 #twin-chat .message-row :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))) {
   width: fit-content !important;
   max-width: min(72ch, 88%) !important;
-  padding: 11px 14px !important;
-  border-radius: 14px !important;
+  min-width: 60px !important;
+  padding: 12px 16px !important;
+  border-radius: 16px !important;
   font-size: 14px !important;
   line-height: 1.6 !important;
   word-break: normal !important;
@@ -441,17 +445,19 @@ button[variant="primary"]:hover {
 #twin-chat .message-row.bot-row :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))),
 #twin-chat .message-row[data-role="assistant"] :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))) {
   margin-right: auto !important;
-  border: 1px solid var(--border) !important;
-  background: var(--surface-2) !important;
-  color: var(--text) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(30, 33, 48, 0.95) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
 #twin-chat .message-row.user-row :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))),
 #twin-chat .message-row[data-role="user"] :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))) {
   margin-left: auto !important;
-  border: 1px solid var(--user-border) !important;
-  background: var(--user-bg) !important;
-  color: var(--text) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 #twin-chat .message-row.user-row button,
@@ -459,9 +465,10 @@ button[variant="primary"]:hover {
   display: none !important;
 }
 
-#twin-chat .message-row :is(.message, .message-bubble, .bubble) * {
+#twin-chat .message-row :is(.message, .message-bubble, .bubble) p,
+#twin-chat .message-row :is(.message, .message-bubble, .bubble) span,
+#twin-chat .message-row :is(.message, .message-bubble, .bubble) div:not(.avatar-container) {
   border: 0 !important;
-  background: transparent !important;
   box-shadow: none !important;
   color: inherit !important;
 }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 import gradio as gr
 from dotenv import load_dotenv
@@ -204,7 +205,7 @@ with gr.Blocks(title="Rosheeta Sheth — Career Twin", fill_width=True) as demo:
                     show_label=False,
                     elem_id="twin-chat",
                     layout="bubble",
-                    avatar_images=(None, "profile.png"),
+                    avatar_images=(None, str(Path(__file__).parent / "profile.png")),
                     height=520,
                     min_height=320,
                     render_markdown=True,
@@ -290,5 +291,5 @@ with gr.Blocks(title="Rosheeta Sheth — Career Twin", fill_width=True) as demo:
     )
 
 if __name__ == "__main__":
-    import os
-    demo.launch(css=CSS, js=JS, theme=gr.themes.Soft(), allowed_paths=[os.path.abspath(os.path.dirname(__file__))])
+    _app_dir = str(Path(__file__).parent)
+    demo.launch(css=CSS, js=JS, theme=gr.themes.Soft(), allowed_paths=[_app_dir])
