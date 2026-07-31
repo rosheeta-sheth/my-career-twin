@@ -32,23 +32,23 @@ CSS = r"""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #0f1117;
-  --surface: rgba(23, 25, 35, 0.6);
-  --surface-2: rgba(30, 33, 43, 0.8);
-  --border: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.2);
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --accent: #8b5cf6;
-  --accent-soft: rgba(139, 92, 246, 0.15);
-  --accent-hover: #a78bfa;
-  --user-bg: rgba(56, 189, 248, 0.15);
-  --user-border: rgba(56, 189, 248, 0.3);
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-2: #f8fafb;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-hover: #1e40af;
+  --user-bg: #dbeafe;
+  --user-border: #93c5fd;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
   --radius: 12px;
   --radius-lg: 16px;
   --header-expanded: 118px;
@@ -59,11 +59,6 @@ html,
 body,
 gradio-app {
   background: var(--bg) !important;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%) !important;
-  background-attachment: fixed !important;
 }
 
 footer,
@@ -102,8 +97,6 @@ footer,
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: border-radius 220ms ease, box-shadow 220ms ease;
@@ -365,8 +358,6 @@ button[variant="primary"]:hover {
   border: 1px solid var(--border) !important;
   border-radius: var(--radius-lg) !important;
   background: var(--surface) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
   box-shadow: var(--shadow-md) !important;
   overflow: hidden !important;
 }
@@ -402,6 +393,7 @@ button[variant="primary"]:hover {
   object-fit: cover !important;
   flex-shrink: 0 !important;
   border: 2px solid var(--accent) !important;
+  background: var(--surface) !important;
 }
 
 #twin-chat .message-row {
@@ -445,19 +437,17 @@ button[variant="primary"]:hover {
 #twin-chat .message-row.bot-row :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))),
 #twin-chat .message-row[data-role="assistant"] :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))) {
   margin-right: auto !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  background: rgba(30, 33, 48, 0.95) !important;
-  color: #f1f5f9 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid var(--border) !important;
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
 }
 
 #twin-chat .message-row.user-row :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))),
 #twin-chat .message-row[data-role="user"] :is(.message, .message-bubble, .bubble):not(:has(:is(.message, .message-bubble, .bubble))) {
   margin-left: auto !important;
-  border: 1px solid rgba(139, 92, 246, 0.4) !important;
-  background: rgba(139, 92, 246, 0.2) !important;
-  color: #f1f5f9 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid var(--user-border) !important;
+  background: var(--user-bg) !important;
+  color: var(--text) !important;
 }
 
 #twin-chat .message-row.user-row button,
@@ -569,8 +559,6 @@ button[variant="primary"]:hover {
   border: 1px solid var(--border) !important;
   border-radius: var(--radius) !important;
   background: var(--surface) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
   box-shadow: var(--shadow-sm) !important;
 }
 
@@ -690,8 +678,6 @@ button.prompt-card:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -770,8 +756,6 @@ button.prompt-card:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
