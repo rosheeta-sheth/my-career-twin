@@ -9,7 +9,7 @@ RESUME_FILE = "RosheetaResume.pdf"
 PROJECTS = [
     {
         "name": "ExpenseBot (AI Receipt & Expense Tracker)",
-        "file": "expensebot.md",
+        "file": "expensebot.html",
         "summary": "Full-stack expense tracker integrating Cloud Vision OCR and Claude to auto-extract and categorize receipt data.",
         "tags": ["React", "Flask", "SQLAlchemy", "Claude API"],
     },
