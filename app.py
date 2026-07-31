@@ -204,6 +204,7 @@ with gr.Blocks(title="Rosheeta Sheth — Career Twin", fill_width=True) as demo:
                     show_label=False,
                     elem_id="twin-chat",
                     layout="bubble",
+                    avatar_images=(None, "profile.png"),
                     height=520,
                     min_height=320,
                     render_markdown=True,
