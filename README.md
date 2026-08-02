@@ -5,46 +5,44 @@ sdk: gradio
 sdk_version: 6.14.0
 ---
 
-# Rosheeta's Career Twin
+# Career Twin Chatbot
 
-Welcome to the repository for **Rosheeta's Career Twin** — an autonomous, agentic AI chatbot designed to act as my digital representative. It uses Retrieval-Augmented Generation (RAG) and function calling to answer questions about my background, skills, and projects, and even collect contact information for follow-ups!
+An AI chatbot that acts as a career assistant for my portfolio site. You can ask it about my background, projects, and skills — or leave your contact info if you want to get in touch.
 
-🔗 **Live Demo:** [https://twin-b6id.onrender.com](https://twin-b6id.onrender.com)
+🔗 **Live:** [https://twin-b6id.onrender.com](https://twin-b6id.onrender.com)
 
-## ✨ Key Features
-- **Agentic AI Chatbot**: Grounded strictly in my personal career documents (resume, project write-ups).
-- **RAG Knowledge Base**: Uses a local semantic search engine with `text-embedding-3-small` and cosine similarity to fetch precise context from markdown and PDF files.
-- **Function Calling**: Equipped with tools to seamlessly log unanswered questions and securely capture interested visitors' contact details via push notifications (Pushover).
-- **Interactive UI**: A sleek, responsive Gradio web application with a modern dark/light mode interface.
+## What it does
 
-## 🛠️ Tech Stack
-- **Backend**: Python, OpenAI API (`gpt-4o` or `gpt-4o-mini`)
-- **Frontend**: Gradio (with custom CSS/HTML injection)
-- **Data Processing**: PyPDF, NumPy (for embeddings and cosine similarity)
+- Answers questions about my experience and projects using my actual resume and write-ups (not hallucinated info)
+- Uses semantic search to pull relevant context before responding
+- Collects contact details from visitors and sends me a push notification via Pushover
+- Suggests follow-up questions to keep the conversation going
 
-## 🚀 Run Locally
+## Stack
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/rosheeta-sheth/my-career-twin.git
-   cd my-career-twin
-   ```
+- Python + OpenAI API (gpt-4o-mini)
+- Gradio for the UI
+- Local vector search using text-embedding-3-small + cosine similarity for RAG
+- PyPDF for parsing project documents
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Run locally
 
-3. **Set up Environment Variables:**
-   Create a `.env` file in the root directory:
-   ```env
-   OPENAI_API_KEY=your_openai_api_key
-   PUSHOVER_USER=your_pushover_user_key (optional)
-   PUSHOVER_TOKEN=your_pushover_app_token (optional)
-   ```
+```bash
+git clone https://github.com/rosheeta-sheth/my-career-twin.git
+cd my-career-twin
+pip install -r requirements.txt
+```
 
-4. **Run the application:**
-   ```bash
-   python app.py
-   ```
-   Open `http://127.0.0.1:7860` in your browser.
+Create a `.env` file:
+```
+OPENAI_API_KEY=your_key_here
+PUSHOVER_USER=your_pushover_user_key
+PUSHOVER_TOKEN=your_pushover_app_token
+```
+
+Then run:
+```bash
+python app.py
+```
+
+App will be at `http://localhost:7860`.
